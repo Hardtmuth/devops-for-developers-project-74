@@ -1,4 +1,4 @@
-dev:
+start:
 	sudo docker-compose up
 
 test:
