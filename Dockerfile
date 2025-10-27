@@ -1,16 +1,16 @@
 FROM node:20.12.2
-
 WORKDIR /app
 
-#COPY package.json .
-#COPY package-lock.json .
+# Важно для кеширования слоев
+COPY app/package.json package.json
+COPY app/package-lock.json package-lock.json
 
-#RUN npm ci
+RUN npm ci
 
-#COPY . .
+COPY app/. .
 
-#ENV FASTIFY_ADDRESS 0.0.0.0
+EXPOSE 8080
+ENV NODE_ENV=production
+RUN make build
 
-# Команда, которая запускается автоматически
-# при старте контейнера
-#CMD ["make", "setup"]
+CMD make start
