@@ -25,9 +25,11 @@ jobs:
       - name: Install Docker Compose
         run: |
           sudo apt-get update
-          sudo apt-get install -y docker-compose-plugin
-          sudo ln -s /usr/lib/docker/cli-plugins/docker-compose /usr/local/bin/docker-compose
-
+          sudo apt-get install -y curl
+          sudo curl -L "https://github.com/docker/compose/releases/download/v2.26.0/docker-compose-Linux-x86_64.tar.gz" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
+  
       - name: Run tests with Docker Compose
         run: docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
