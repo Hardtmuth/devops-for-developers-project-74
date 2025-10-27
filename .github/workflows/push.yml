@@ -20,7 +20,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Run tests with Docker Compose
-        run: sudo docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+        run: docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
       - name: Build and push
         uses: docker/build-push-action@v6
