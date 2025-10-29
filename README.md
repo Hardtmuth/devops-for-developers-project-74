@@ -36,10 +36,10 @@ DATABASE_USERNAME=postgres
 DATABASE_PASSWORD=postgres
 DATABASE_PORT=5432
 DATABASE_HOST=localhost
-Running an application with Postgres (production)
-Export environment variables to work with the database or prepare a .env file with variables
 ```
-### Run
+
+### Running an application with Postgres (production)
+Export environment variables to work with the database or prepare a .env file with variables
 ```
 make ci-build
 make push
