@@ -1,11 +1,11 @@
+
+version: "3.9"
+
 services:
+
   app:
     build:
       context: .
       dockerfile: Dockerfile.production
     image: 1eve1/devops-for-developers-project-74
     command: make test
-    ports:
-      - "8080:8080"
-    #volumes:
-    #  - "./app:/app"
