@@ -1,4 +1,9 @@
 node_modules/
+build/
+dist/
+tmp/
+temp/
 .cache/
 .npm/
 .env
+*.sqlite
